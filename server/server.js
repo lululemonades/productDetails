@@ -13,6 +13,12 @@ app.listen(port, () => {
     console.log(`server running at: http://localhost:${port}`);
 });
 
-app.get('/productdetails', (req, res) => {
-
+app.get('/productDetails', (req, res) => {
+    db.retrieve()
+        .then((data) => {
+            res.send(data);
+        })
+        .catch((error) => {
+            console.log('YOUR GET CATCH HAS AN ERROR', error);
+        })
 });

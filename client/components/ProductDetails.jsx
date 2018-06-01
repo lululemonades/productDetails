@@ -11,8 +11,9 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/productdetails')
+    axios.get('/productDetails')
     .then((response) => {
+      console.log(response)
       this.setState ({
         products: response.data
       })
@@ -24,10 +25,15 @@ class ProductDetails extends React.Component {
 
   render() {
     return(
-      <h1>[******Product Details Component Rendered******]</h1>
-      <div>
-      </div>
-    )
+        <div>
+          <h1>[******Product Details Component Rendered******]</h1>
+          {
+            this.state.products.map((product, i) => {
+              return <div>{products.title}</div>
+            })
+          }
+        </div>
+    );
   }
 }
 
