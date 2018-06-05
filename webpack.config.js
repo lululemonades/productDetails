@@ -11,13 +11,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'env']
+          presets: ['react', 'es2015', 'env'],
         },
       },
     ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname + '/public')
-  }
+    path: path.join(`${__dirname  }/public`),
+  },
 };
