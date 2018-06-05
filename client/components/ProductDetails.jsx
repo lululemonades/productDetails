@@ -9,11 +9,10 @@ class ProductDetails extends React.Component {
       products: []
     }
   }
-
   componentDidMount() {
     axios.get('/productDetails')
     .then((response) => {
-      console.log(response)
+      console.log(response.data)
       this.setState ({
         products: response.data
       })
@@ -25,19 +24,28 @@ class ProductDetails extends React.Component {
 
   render() {
     return(
-        <div>
-          <h1>[******Product Details Component Rendered******]</h1>
+      <div>
+          <h1>lululemonades product details</h1>
+      <div className="product-details">
           {
-            this.state.products.map((product, i) => {
-              return <div>{products.title}</div>
-            })
+            this.state.products.slice(0,1).map((product, i) => {
+              return (
+                <div>
+                  <div>
+                    <h2>{product.title}</h2>
+                    <div>{product.price}</div>
+                  </div>
+                </div>
+              );
+            });
           }
         </div>
+        </div>
     );
-  }
+  };
 }
 
-
+// still working on components
 export default ProductDetails; 
   // {
   //   products.map((product, i) => {

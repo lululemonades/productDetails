@@ -1,3 +1,10 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
+    margin: 50px;
+}
+
+.product-details {
+    height: 100px;
+    width: 100px;
+    border: 10px;
 }

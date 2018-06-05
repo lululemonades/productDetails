@@ -14,11 +14,14 @@ app.listen(port, () => {
 });
 
 app.get('/productDetails', (req, res) => {
-    db.retrieve()
+    db.ProductDetail.find()
         .then((data) => {
-            res.send(data);
-        })
-        .catch((error) => {
-            console.log('YOUR GET CATCH HAS AN ERROR', error);
+            // console.log('YOUR DATA', data);
+            res.send(data)
+            res.end()
+        }).catch((err) => {
+            // console.log('CANNOT RETRIEVE FROM DB')
         })
 });
+
+// server details

@@ -20,38 +20,31 @@ let productSchema = mongoose.Schema({
 
 let ProductDetail = mongoose.model('ProductDetail', productSchema);
 // console.log(itemDetails)
-
-
-let retrieve = () => {
-    for (var i = 0; i < itemDetails.length; i++) {
-        // console.log(itemDetails[i])
-        (function() {
-            var products = new ProductDetail({
-                "title": itemDetails[i].title,
-                "price": itemDetails[i].price,
-                "description": itemDetails[i].description,
-                "color": itemDetails[i].color,
-                "size": itemDetails[i].size,
-                "id": itemDetails[i].id
-            });
-
-            products.save()
-                .then((data) => {
-                    console.log('YOU INSERT TO DB', data)
-                }).catch((err) => {
-                    console.log('YOU FAILED INSERT', err)
-                });
-        })()
-    }
+// iterate through item
+for (var i = 0; i < itemDetails.length; i++) {
+    // console.log(itemDetails[i])
+    (function() {
+        var products = new ProductDetail({
+            "title": itemDetails[i].title,
+            "price": itemDetails[i].price,
+            "description": itemDetails[i].description,
+            "color": itemDetails[i].color,
+            "size": itemDetails[i].size,
+            "id": itemDetails[i].id
+        });
+    })()
 }
 
-
-ProductDetail.find()
+products.save()
     .then((data) => {
-        console.log('YOUR DATA', data);
+        // console.log('YOU INSERT TO DB', data)
     }).catch((err) => {
-        console.log('CANNOT RETRIEVE FROM DB')
-    })
+        // console.log('YOU FAILED INSERT', err)
+    });
 
 
-module.exports.retrieve = retrieve;
+
+module.exports = {
+    retrieve,
+    ProductDetail
+};
