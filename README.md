@@ -1,13 +1,13 @@
-# Project Name
+# Lululemon - Product Details Module
 
-> Project description
+> A clone of Lululemon's product details module. 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/lululemonades/productDetails
+  - https://github.com/lululemonades/reviews-component
+  - https://github.com/lululemonades/image-carousel
+  - https://github.com/lululemonades/you-may-also-like
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> The product details module includes information of a product.
 
 ## Requirements
 
@@ -36,5 +36,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
-# productDetails
