@@ -19,10 +19,8 @@ app.get('/productDetails', (req, res) => {
     .then((data) => {
       // console.log('YOUR DATA', data);
       res.send(data);
-      res.end();
     }).catch((err) => {
       console.log('CANNOT RETRIEVE FROM DB', err);
     });
 });
 
-// server details
