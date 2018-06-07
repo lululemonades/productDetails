@@ -2,11 +2,12 @@ import React from 'react';
 
 const sizes = props => (
   <div>
-    {
-      props.sizes.map((size) => {
-        return <span>{size} </span>
-      })
-    }
+    <select className="sizes">
+      <option>Select Size</option>
+      {
+        props.sizes.map(size => <option>{size} </option>)
+      }
+    </select>
   </div>
 );
 
