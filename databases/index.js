@@ -15,6 +15,9 @@ const productSchema = mongoose.Schema({
   description: String,
   color: Array, // Will change to an array of multiple color strings
   size: Array, // Will change to an array of multiple size numbers
+  fabric: String, 
+  care: String,
+  features: String,
   id: Number,
 });
 
@@ -29,6 +32,9 @@ itemDetails.forEach((item) => {
     description: item.description,
     color: item.color,
     size: item.size,
+    fabric: item.fabric,
+    care: item.care,
+    features: item.features,
     id: item.id,
   });
   // }());
