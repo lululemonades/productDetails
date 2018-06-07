@@ -3,7 +3,7 @@ import React from 'react';
 const sizes = props => (
   <div>
     <select className="sizes">
-      <option>Select Size</option>
+      <option disabled selected>Select Size</option>
       {
         props.sizes.map(size => <option>{size} </option>)
       }

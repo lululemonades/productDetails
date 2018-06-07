@@ -10,8 +10,10 @@ class App extends React.Component {
     this.state = {
       products: [],
       itemId: 1,
+      share: false,
     };
   }
+  
   componentDidMount() {
     axios.get(`/productDetails/${this.state.itemId}`)
       .then((response) => {
@@ -25,6 +27,12 @@ class App extends React.Component {
       });
   }
 
+  toggleShare() {
+    this.setState ({
+      share: !this.state.share,
+    })
+  }
+
   render() {
     return (
       <div>
@@ -36,11 +44,13 @@ class App extends React.Component {
                 <span className="price">{product.price}</span>
                 <div>Why we made this</div>
                 <p>{product.description}</p>
-                <div className="border" />
+                <div className="horizontal-line" />
 
                 <div>
                   <Colors colors={product.color} />
                 </div>
+
+                <br/>
 
                 <div>
                   <Sizes sizes={product.size} />
@@ -57,14 +67,24 @@ class App extends React.Component {
                 </div>
 
                 <div className="social">
-                  <button><img src="share.png" id="share" /> Share</button>
+                  <div className="inner">
+                    <button onClick={this.toggleShare.bind(this)}><img src="share.png" id="share" /> Share
+                      {this.state.share && <div className="dropdown-share">Facebook</div>}
+                    </button>
+                  </div>
                   <span className="vertical-line" />
-                  <button><img src="square-bubble.png" id="share" /> Live Chat</button>
-                  <button><img src="star.png" id="share" /> Reviews</button>
+                  <div className="inner">
+                    <button><img src="square-bubble.png" id="share" /> Live Chat</button>
+                  </div>
+                  <span className="vertical-line" />
+                  <div className="inner">
+                    <button><img src="star.png" id="share" /> Reviews</button>
+                  </div>
                 </div>
 
                 <div>
                   <ItemMaterial fabric={product.fabric} care={product.care} features={product.features} />
+                  <span>SKU: {product._id}</span>
                 </div>
 
               </div>
