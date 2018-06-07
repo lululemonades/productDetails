@@ -1,13 +1,17 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
     margin: 50px;
     background-color:#fafafa;
+}
+
+h1 {
+    font-weight: normal;
 }
 
 .product-details {
     height: 300px;
     width: 300px;
-    border: 10px;
     font-size: 15px;
 }
 
@@ -20,3 +24,72 @@ body {
 p {
     font-size:12px
 }
+
+.button {
+    box-sizing: border-box;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 15px 17px 13px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1.4px;
+    width: 100%;
+}
+
+#bag {
+    background-color: #d22030;
+    border: 1px solid #d22030;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#store {
+    background-color: #fff;
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+
+#share {
+    height:10px;
+    width:10px;
+}
+
+.social {
+    font-size: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    /* font-weight: 700; */
+    padding: 15px 17px 13px;
+    /* text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1.4px; */
+    outline:none;
+    border:none;
+    overflow:hidden;
+    width: 100%;
+}
+
+.sizes {
+    align-items: center;
+    display: flex;
+    margin-top: 18px;
+    justify-content:space-between;
+}
+
+.item-material {
+    width: 100%;
+    padding:10px;
+    border:1px solid #000;
+}
+
+.color-box {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+  }
+  
