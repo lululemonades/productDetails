@@ -13,8 +13,8 @@ const productSchema = mongoose.Schema({
   title: String,
   price: String,
   description: String,
-  color: String, // Will change to an array of multiple color strings
-  size: Number, // Will change to an array of multiple size numbers
+  color: Array, // Will change to an array of multiple color strings
+  size: Array, // Will change to an array of multiple size numbers
   id: Number,
 });
 
@@ -40,7 +40,7 @@ itemDetails.forEach((item) => {
   //   // console.log('YOU FAILED INSERT', err)
   // });
 });
-// console.log(item)
+
 
 
 module.exports = {
