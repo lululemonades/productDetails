@@ -3,7 +3,6 @@ import axios from 'axios';
 import Colors from './Colors.jsx';
 import Sizes from './Sizes.jsx';
 import ItemMaterial from './ItemMaterial.jsx';
-import styled from 'styled-components';
 
 class App extends React.Component {
   constructor(props) {
