@@ -7,8 +7,8 @@ body {
 
 /* PRODUCT DETAILS MODULE */
 .product-details {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
 }
 
 /* ITEM TITLE, PRICE, DESCRIPTION */
@@ -64,7 +64,9 @@ p {
 .dropdown-share {
     height: 10px;
     width: 20px;
+    text-align: left;
 }
+
 
 button {
     font-size: 10px;
@@ -84,13 +86,14 @@ button {
   border-right:1px solid #e0e0e0;
 }
 
-/* FABRIC - CARE - FEATURES */
 .inner {
     display:inline-block;
 }
 
+/* FABRIC - CARE - FEATURES */
 .item-material {
-    border:1px solid #000;
+    border:1px solid #fafafa;
+    box-shadow: 10px 5px 5px #e0e0e0;
     background-color: white;
     box-sizing: border-box;
     font-size: 13px;
@@ -109,13 +112,14 @@ button {
 .sizes {
     align-items: center;
     display: flex;
-    margin-top: 18px;
+    margin-top: 2px;
     justify-content:space-between;
     position: relative;
     flex-flow: row nowrap;
     height: 44px;
     width: 232px;
 }
+
 
 /* COLORS COMPONENT */
 .color-box {
@@ -124,5 +128,15 @@ button {
     height: 20px;
     margin: 5px;
     border: 1px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
   }
+
+.color-name {
+    font-size:10px;
+    margin: 5px;
+    clear: left;
+}
   
+.sku {
+    font-size: 10px
+}
