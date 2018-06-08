@@ -1,9 +1,107 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Colors from './Colors.jsx';
 import Sizes from './Sizes.jsx';
 import ItemMaterial from './ItemMaterial.jsx';
 
+/* ************************* STYLED-COMPONENTS ************************* */
+const Body = styled.body`
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
+    margin: 50px;
+    background-color: #fafafa;
+`;
+
+/* *******************     PRODUCT DETAILS       *********************** */
+const ProductDetails = styled.div`
+    height: 50%;
+    width: 30%;
+    margin: 60px;
+    padding: 50;
+    background-color: #fafafa
+    float:right;
+`;
+
+const ProductDetailsContainer = styled.div`
+  margin:20px;
+`;
+const Title = styled.h1`
+  font-weight: normal;
+`;
+
+const Span = styled.span`
+  font-weight: normal;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: normal;
+`;
+
+const Description = styled.p`
+  font-size: 12px;
+`;
+
+const HorizontalLine = styled.div`
+  padding:0;
+  border-bottom:1px solid #e0e0e0;
+  margin-bottom: 10px;
+`;
+
+/* **************   ADD TO BAG + FINDINSTORE BUTTONS  ******************** */
+const Button = styled.button`
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 15px 17px 13px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1.4px;
+  width: 100%;
+`;
+
+const AddToBag = Button.extend`
+  background-color: #d22030;
+  border: 1px solid #d22030;
+  color: #fff;
+  margin-top: 10px;
+`;
+
+const FindInStore = Button.extend`
+  background-color: #fff;
+  border: 1px solid #000;
+  margin-top: 10px;
+`;
+
+/* ********************  SHARE-LIVECHAT-REVIEWS  ************************* */
+const ShareLiveChatReview = styled.button`
+  font-size: 10px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 15px 17px 13px;
+  cursor: pointer;
+  letter-spacing: 1.4px;
+  outline:none;
+  border:none;
+  overflow:hidden;
+  width: 100%;
+  display: inline-block;
+`;
+
+const Img = styled.img`
+    width: 10px;
+    height: 10px;
+`;
+
+const VerticalLine = styled.span`
+  border-right:1px solid #e0e0e0;
+`;
+
+const Inner = styled.div`
+  display:inline-block;
+`;
+
+/* ************************** APP COMPONENT ******************************* */
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,16 +133,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="product-details">
+      <Body>
+        <ProductDetails>
           {
             this.state.products.map(product => (
-              <div>
-                <h1>{product.title}</h1>
-                <span className="price">{product.price}</span>
+              <ProductDetailsContainer>
+                <Title>{product.title}</Title>
+                <Span>{product.price}</Span>
                 <div>Why we made this</div>
-                <p>{product.description}</p>
-                <div className="horizontal-line" />
+                <Description>{product.description}</Description>
+                <HorizontalLine />
 
                 <div>
                   <Colors colors={product.color} />
@@ -57,39 +155,33 @@ class App extends React.Component {
                 </div>
 
                 <div>
-                  <div>
-                    <button className="button" id="bag">ADD TO BAG</button>
-                  </div>
-
-                  <div>
-                    <button className="button" id="store">FIND IN STORE</button>
-                  </div>
+                  <AddToBag>ADD TO BAG</AddToBag>
+                  <FindInStore>FIND IN STORE</FindInStore>
                 </div>
 
-                <div className="social">
-                  <div className="inner">
-                    <button onClick={this.toggleShare.bind(this)}><img alt="" src="share.png" id="share" /> Share</button>
+                <div>
+                  <Inner>
+                    <ShareLiveChatReview onClick={this.toggleShare.bind(this)}><Img src="share.png" /> Share</ShareLiveChatReview>
                     {
-                      this.state.share &&
-                      <div>
-                        <div>Facebook</div>
-                        <div>Email</div>
-                        <div>Message</div>
-                      </div>
+                        this.state.share &&
+                        <div>
+                          <div>Facebook</div>
+                          <div>Email</div>
+                          <div>Message</div>
+                        </div>
                     }
-                  </div>
+                  </Inner>
 
-                  <span className="vertical-line" />
-                  <div className="inner">
-                    <button><img alt="" src="square-bubble.png" id="share" /> Live Chat</button>
-                  </div>
+                  <VerticalLine />
+                  <Inner>
+                    <ShareLiveChatReview><Img src="square-bubble.png" /> Live Chat</ShareLiveChatReview>
+                  </Inner>
 
-                  <span className="vertical-line" />
-                  <div className="inner">
-                    <button><img src="star.png" alt="" id="share" /> Reviews</button>
-                  </div>
+                  <VerticalLine />
 
-
+                  <Inner>
+                    <ShareLiveChatReview><Img src="star.png" /> Reviews</ShareLiveChatReview>
+                  </Inner>
                 </div>
 
                 <div>
@@ -99,14 +191,13 @@ class App extends React.Component {
                     features={product.features}
                   />
                   <br />
-                  <span className="sku">SKU: {product._id}</span>
+                  <Span className="sku">SKU: {product._id}</Span>
                 </div>
-
-              </div>
+              </ProductDetailsContainer>
             ))
          }
-        </div>
-      </div>
+        </ProductDetails>
+      </Body>
     );
   }
 }

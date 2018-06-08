@@ -1,4 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const ItemMaterialStyle = styled.div`
+  border:1px solid #fafafa;
+  box-shadow: 10px 5px 5px #e0e0e0;
+  background-color: white;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 15px 17px 13px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1.4px;
+  width: 100%;
+  margin-top:10px;
+`;
 
 class ItemMaterial extends React.Component {
   constructor(props) {
@@ -32,17 +49,17 @@ class ItemMaterial extends React.Component {
   render() {
     return (
       <div>
-        <div className="item-material" onClick={this.toggleFabric.bind(this)}>Fabric
+        <ItemMaterialStyle onClick={this.toggleFabric.bind(this)}>Fabric
           {this.state.displayFabricInfo && <div>{this.props.fabric}</div>}
-        </div>
+        </ItemMaterialStyle>
 
-        <div className="item-material" onClick={this.toggleCare.bind(this)}>Care
+        <ItemMaterialStyle onClick={this.toggleCare.bind(this)}>Care
           {this.state.displayCareInfo && <div>{this.props.care}</div>}
-        </div>
+        </ItemMaterialStyle>
 
-        <div className="item-material" onClick={this.toggleFeatures.bind(this)}>Features
+        <ItemMaterialStyle onClick={this.toggleFeatures.bind(this)}>Features
           {this.state.displayFeaturesInfo && <div>{this.props.features}</div>}
-        </div>
+        </ItemMaterialStyle>
       </div>
     );
   }

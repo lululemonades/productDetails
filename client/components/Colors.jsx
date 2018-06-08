@@ -1,4 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const ColorBox = styled.div`
+  float: left;
+  width: 50px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  cursor: pointer;
+`;
+
+const ColorName = styled.div`
+  font-size:10px;
+  margin: 5px;
+  clear: left;
+`;
 
 
 class Colors extends React.Component {
@@ -33,11 +50,11 @@ class Colors extends React.Component {
         {
           this.props.colors.map(color => (
             <div>
-              <div className="color-box" style={{ backgroundColor: color }} onClick={() => this.onClick(color)} />
+              <ColorBox style={{ backgroundColor: color }} onClick={() => this.onClick(color)}/>
             </div>
           ))
         }
-        {this.state.displayColorName && <div className="color-name">{this.state.colorName}</div>}
+        {this.state.displayColorName && <ColorName>{this.state.colorName}</ColorName>}
       </div>
     );
   }
