@@ -6,7 +6,13 @@ class Colors extends React.Component {
     super(props);
     this.state = {
       displayColorName: false,
+      colorName: '',
     };
+  }
+
+  onClick(color) {
+    this.changeColorName(color);
+    this.toggleColorName();
   }
 
   toggleColorName() {
@@ -15,20 +21,26 @@ class Colors extends React.Component {
     });
   }
 
+  changeColorName(color) {
+    this.setState({
+      colorName: color,
+    });
+  }
+
   render() {
     return (
       <div>
         {
           this.props.colors.map(color => (
-            <div className="color-box" style={{ backgroundColor: color }} onClick={this.toggleColorName.bind(this)}>
-              {this.state.displayColorName && <div>{color}</div>}
+            <div>
+              <div className="color-box" style={{ backgroundColor: color }} onClick={() => this.onClick(color)} />
             </div>
           ))
         }
+        {this.state.displayColorName && <div className="color-name">{this.state.colorName}</div>}
       </div>
     );
   }
 }
-
 
 export default Colors;

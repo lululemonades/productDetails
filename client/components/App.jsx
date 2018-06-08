@@ -3,6 +3,7 @@ import axios from 'axios';
 import Colors from './Colors.jsx';
 import Sizes from './Sizes.jsx';
 import ItemMaterial from './ItemMaterial.jsx';
+import styled from 'styled-components';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class App extends React.Component {
       share: false,
     };
   }
-  
+
   componentDidMount() {
     axios.get(`/productDetails/${this.state.itemId}`)
       .then((response) => {
@@ -28,9 +29,9 @@ class App extends React.Component {
   }
 
   toggleShare() {
-    this.setState ({
+    this.setState({
       share: !this.state.share,
-    })
+    });
   }
 
   render() {
@@ -50,7 +51,7 @@ class App extends React.Component {
                   <Colors colors={product.color} />
                 </div>
 
-                <br/>
+                <br />
 
                 <div>
                   <Sizes sizes={product.size} />
@@ -68,23 +69,38 @@ class App extends React.Component {
 
                 <div className="social">
                   <div className="inner">
-                    <button onClick={this.toggleShare.bind(this)}><img src="share.png" id="share" /> Share
-                      {this.state.share && <div className="dropdown-share">Facebook</div>}
-                    </button>
+                    <button onClick={this.toggleShare.bind(this)}><img alt="" src="share.png" id="share" /> Share</button>
+                    {
+                      this.state.share &&
+                      <div>
+                        <div>Facebook</div>
+                        <div>Email</div>
+                        <div>Message</div>
+                      </div>
+                    }
                   </div>
+
                   <span className="vertical-line" />
                   <div className="inner">
-                    <button><img src="square-bubble.png" id="share" /> Live Chat</button>
+                    <button><img alt="" src="square-bubble.png" id="share" /> Live Chat</button>
                   </div>
+
                   <span className="vertical-line" />
                   <div className="inner">
-                    <button><img src="star.png" id="share" /> Reviews</button>
+                    <button><img src="star.png" alt="" id="share" /> Reviews</button>
                   </div>
+
+
                 </div>
 
                 <div>
-                  <ItemMaterial fabric={product.fabric} care={product.care} features={product.features} />
-                  <span>SKU: {product._id}</span>
+                  <ItemMaterial
+                    fabric={product.fabric}
+                    care={product.care}
+                    features={product.features}
+                  />
+                  <br />
+                  <span className="sku">SKU: {product._id}</span>
                 </div>
 
               </div>
