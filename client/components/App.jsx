@@ -9,7 +9,7 @@ import ItemMaterial from './ItemMaterial.jsx';
 const Body = styled.body`
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
-    margin: 50px;
+    margin: 30px;
     background-color: #fafafa;
 `;
 
@@ -18,7 +18,6 @@ const ProductDetails = styled.div`
     height: 50%;
     width: 30%;
     margin: 60px;
-    padding: 50px;
     background-color: #fafafa
     float: right;
 `;
@@ -86,7 +85,6 @@ const ShareLiveChatReview = styled.button`
   border: none;
   overflow: hidden;
   width: 100%;
-  ${'' /* border-right: 1px solid #e0e0e0; */}
   display: inline-block;
 `;
 
