@@ -25,6 +25,8 @@ const ProductDetails = styled.div`
 
 const ProductDetailsContainer = styled.div`
   margin:20px;
+  min-width: 317px;
+  max-width:322px;
 `;
 const Title = styled.h1`
   font-weight: normal;
@@ -101,6 +103,17 @@ const Inner = styled.div`
   display:inline-block;
 `;
 
+const ShareLiveChatReviewDiv = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
+// const FacebookIcons= Facebook.extend`
+//   height:10px;
+//   width:10px;
+//   color: blue;
+// `;
+
 /* ************************** APP COMPONENT ******************************* */
 class App extends React.Component {
   constructor(props) {
@@ -159,13 +172,12 @@ class App extends React.Component {
                   <FindInStore>FIND IN STORE</FindInStore>
                 </div>
 
-                <div>
+                <ShareLiveChatReviewDiv>
                   <Inner>
                     <ShareLiveChatReview onClick={this.toggleShare.bind(this)}><Img src="share.png" /> Share</ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>
-                          <div>Facebook</div>
                           <div>Email</div>
                           <div>Message</div>
                         </div>
@@ -182,7 +194,7 @@ class App extends React.Component {
                   <Inner>
                     <ShareLiveChatReview><Img src="star.png" /> Reviews</ShareLiveChatReview>
                   </Inner>
-                </div>
+                </ShareLiveChatReviewDiv>
 
                 <div>
                   <ItemMaterial

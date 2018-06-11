@@ -49,7 +49,7 @@ class ItemMaterial extends React.Component {
   render() {
     return (
       <div>
-        <ItemMaterialStyle onClick={this.toggleFabric.bind(this)}>Fabric
+        <ItemMaterialStyle onClick={this.toggleFabric.bind(this)}>Fabric 
           {this.state.displayFabricInfo && <div>{this.props.fabric}</div>}
         </ItemMaterialStyle>
 
