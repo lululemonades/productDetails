@@ -41,13 +41,11 @@ const Span = styled.span`
 
 const Description = styled.p`
   font-size: 12px;
-`;
-
-const HorizontalLine = styled.div`
-  padding:0;
+  padding:10px;
   border-bottom:1px solid #e0e0e0;
   margin-bottom: 10px;
 `;
+
 
 /* **************   ADD TO BAG + FINDINSTORE BUTTONS  ******************** */
 const Button = styled.button`
@@ -88,16 +86,13 @@ const ShareLiveChatReview = styled.button`
   border:none;
   overflow:hidden;
   width: 100%;
+  ${'' /* border-right: 1px solid #e0e0e0; */}
   display: inline-block;
 `;
 
 const Img = styled.img`
     width: 10px;
     height: 10px;
-`;
-
-const VerticalLine = styled.span`
-  border-right:1px solid #e0e0e0;
 `;
 
 const Inner = styled.div`
@@ -157,7 +152,6 @@ class App extends React.Component {
                 <Span>{product.price}</Span>
                 <div>Why we made this</div>
                 <Description>{product.description}</Description>
-                <HorizontalLine />
 
                 <div>
                   <Colors colors={product.color} />
@@ -189,13 +183,10 @@ class App extends React.Component {
                         </div>
                     }
                   </Inner>
-                  <VerticalLine />
 
                   <Inner>
                     <ShareLiveChatReview><Img src="square-bubble.png" /> Live Chat</ShareLiveChatReview>
                   </Inner>
-
-                  <VerticalLine />
 
                   <Inner>
                     <ShareLiveChatReview><Img src="star.png" /> Reviews</ShareLiveChatReview>
