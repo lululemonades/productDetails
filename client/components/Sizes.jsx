@@ -19,14 +19,14 @@ const Sizes = props => (
     <Select>
       <option disabled selected>Select Size</option>
       {
-        props.sizes.map(size => <option>{size} </option>)
+        props.sizes.map(size => <option key={size}>{size} </option>)
       }
     </Select>
   </div>
 );
 
 Sizes.propTypes = {
-  sizes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default Sizes;

@@ -145,7 +145,7 @@ class App extends React.Component {
         <ProductDetails>
           {
             this.state.products.map(product => (
-              <ProductDetailsContainer>
+              <ProductDetailsContainer key={product}>
                 <Title>{product.title}</Title>
                 <Span>{product.price}</Span>
                 <div>Why we made this</div>
