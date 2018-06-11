@@ -18,9 +18,9 @@ const ProductDetails = styled.div`
     height: 50%;
     width: 30%;
     margin: 60px;
-    padding: 50;
+    padding: 50px;
     background-color: #fafafa
-    float:right;
+    float: right;
 `;
 
 const ProductDetailsContainer = styled.div`
@@ -82,9 +82,9 @@ const ShareLiveChatReview = styled.button`
   padding: 15px 17px 13px;
   cursor: pointer;
   letter-spacing: 1.4px;
-  outline:none;
-  border:none;
-  overflow:hidden;
+  outline: none;
+  border: none;
+  overflow: hidden;
   width: 100%;
   ${'' /* border-right: 1px solid #e0e0e0; */}
   display: inline-block;
