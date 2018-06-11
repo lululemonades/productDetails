@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import PropTypes from 'prop-types';
 
 const ColorBox = styled.div`
   float: left;
@@ -49,8 +49,8 @@ class Colors extends React.Component {
       <div>
         {
           this.props.colors.map(color => (
-            <div>
-              <ColorBox style={{ backgroundColor: color }} onClick={() => this.onClick(color)}/>
+            <div key={color}>
+              <ColorBox style={{ backgroundColor: color }} onClick={() => this.onClick(color)} />
             </div>
           ))
         }
@@ -59,5 +59,9 @@ class Colors extends React.Component {
     );
   }
 }
+
+Colors.propTypes = {
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Colors;

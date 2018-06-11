@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ItemMaterialStyle = styled.div`
   border:1px solid #fafafa;
@@ -59,7 +60,7 @@ class ItemMaterial extends React.Component {
   render() {
     return (
       <div>
-        <ItemMaterialStyle onClick={this.toggleFabric.bind(this)}>
+        <ItemMaterialStyle onClick={() => this.toggleFabric}>
           <FabricCareFeaturesOuterDiv>
             <div>Fabric</div>
             <Plus>+</Plus>
@@ -67,7 +68,7 @@ class ItemMaterial extends React.Component {
           {this.state.displayFabricInfo && <div>{this.props.fabric}</div>}
         </ItemMaterialStyle>
 
-        <ItemMaterialStyle onClick={this.toggleCare.bind(this)}>
+        <ItemMaterialStyle onClick={() => this.toggleCare}>
           <FabricCareFeaturesOuterDiv>
             <div>Care</div>
             <Plus>+</Plus>
@@ -75,7 +76,7 @@ class ItemMaterial extends React.Component {
           {this.state.displayCareInfo && <div>{this.props.care}</div>}
         </ItemMaterialStyle>
 
-        <ItemMaterialStyle onClick={this.toggleFeatures.bind(this)}>
+        <ItemMaterialStyle onClick={() => this.toggleFeatures}>
           <FabricCareFeaturesOuterDiv>
             <div>Features</div>
             <Plus>+</Plus>
@@ -87,5 +88,10 @@ class ItemMaterial extends React.Component {
   }
 }
 
+ItemMaterial.propTypes = {
+  fabric: PropTypes.string.isRequired,
+  care: PropTypes.string.isRequired,
+  features: PropTypes.string.isRequired,
+};
 
 export default ItemMaterial;

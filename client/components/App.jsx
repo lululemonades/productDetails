@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import Colors from './Colors';
-import Sizes from './Sizes';
-import ItemMaterial from './ItemMaterial';
+import Colors from './Colors.jsx';
+import Sizes from './Sizes.jsx';
+import ItemMaterial from './ItemMaterial.jsx';
 
 /* ************************* STYLED-COMPONENTS ************************* */
 const Body = styled.body`
@@ -168,7 +168,7 @@ class App extends React.Component {
 
                 <ShareLiveChatReviewDiv>
                   <Inner>
-                    <ShareLiveChatReview onClick={this.toggleShare.bind(this)}><Img src="share.png" /> Share</ShareLiveChatReview>
+                    <ShareLiveChatReview onClick={() => this.toggleShare}><Img src="share.png" /> Share</ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>

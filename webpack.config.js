@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -18,9 +17,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.join(`${__dirname }/public`),
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
+    path: path.join(`${__dirname}/public`),
   },
 };

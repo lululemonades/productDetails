@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Select = styled.select`
   align-items: center;
@@ -15,7 +16,7 @@ const Select = styled.select`
 
 const Sizes = props => (
   <div>
-    <Select> 
+    <Select>
       <option disabled selected>Select Size</option>
       {
         props.sizes.map(size => <option>{size} </option>)
@@ -23,5 +24,9 @@ const Sizes = props => (
     </Select>
   </div>
 );
+
+Sizes.propTypes = {
+  sizes: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Sizes;
