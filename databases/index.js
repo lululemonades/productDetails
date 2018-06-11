@@ -15,7 +15,7 @@ const productSchema = mongoose.Schema({
   description: String,
   color: Array, // Will change to an array of multiple color strings
   size: Array, // Will change to an array of multiple size numbers
-  fabric: String, 
+  fabric: String,
   care: String,
   features: String,
   id: Number,
