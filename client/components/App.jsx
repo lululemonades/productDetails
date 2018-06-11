@@ -28,6 +28,7 @@ const ProductDetailsContainer = styled.div`
   min-width: 317px;
   max-width:322px;
 `;
+
 const Title = styled.h1`
   font-weight: normal;
 `;
@@ -108,11 +109,12 @@ const ShareLiveChatReviewDiv = styled.div`
   align-items: flex-start;
 `;
 
-// const FacebookIcons= Facebook.extend`
-//   height:10px;
-//   width:10px;
-//   color: blue;
-// `;
+const SocialMediaIcons = styled.img`
+  height:15px;
+  width:12px;
+  padding-right:2px;
+`;
+
 
 /* ************************** APP COMPONENT ******************************* */
 class App extends React.Component {
@@ -178,13 +180,17 @@ class App extends React.Component {
                     {
                         this.state.share &&
                         <div>
-                          <div>Email</div>
-                          <div>Message</div>
+                          <SocialMediaIcons src="facebook.png" />
+                          <SocialMediaIcons src="twitter.png" />
+                          <SocialMediaIcons src="pintrest.png" />
+                          <SocialMediaIcons src="tumblr.png" />
+                          <SocialMediaIcons src="googleplus.png" />
+                          <SocialMediaIcons src="email.png" />
                         </div>
                     }
                   </Inner>
-
                   <VerticalLine />
+
                   <Inner>
                     <ShareLiveChatReview><Img src="square-bubble.png" /> Live Chat</ShareLiveChatReview>
                   </Inner>
