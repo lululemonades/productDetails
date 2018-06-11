@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+
 const app = express();
 const db = require('../databases/index.js');
 
@@ -13,12 +14,15 @@ app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
 
-app.get('/productDetails', (req, res) => {
-  db.retrieve()
+app.get('/productDetails/:id', (req, res) => {
+  // console.log('look here', req.params.id)
+  db.ProductDetail.find({ id: req.params.id })
     .then((data) => {
-      res.send(data);
-    })
-    .catch((error) => {
-      console.log('YOUR GET CATCH HAS AN ERROR', error);
+      // console.log('YOUR DATA', data);
+      const product = data.slice(0, 1);
+      res.send(product);
+    }).catch((err) => {
+      console.log('CANNOT RETRIEVE FROM DB', err);
     });
 });
+
