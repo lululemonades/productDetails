@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const db = require('../databases/index.js');
@@ -9,6 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(cors());
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);

@@ -105,12 +105,6 @@ const ShareLiveChatReviewDiv = styled.div`
   align-items: flex-start;
 `;
 
-const SocialMediaIcons = styled.img`
-  height:15px;
-  width:12px;
-  padding-right:2px;
-`;
-
 const FacebookIcon = Facebook.extend`
   height: 10px;
   width: 20px;
