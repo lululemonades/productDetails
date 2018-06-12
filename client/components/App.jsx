@@ -1,6 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Facebook } from 'styled-icons/fa-brands/Facebook';
+import { Twitter } from 'styled-icons/fa-brands/Twitter';
+import { Tumblr } from 'styled-icons/fa-brands/Tumblr';
+import { Google } from 'styled-icons/fa-brands/Google';
+import { Mail } from 'styled-icons/feather/Mail';
+import { Share } from 'styled-icons/material/Share';
+import { Chat } from 'styled-icons/material/Chat';
+import { Star } from 'styled-icons/fa-regular/Star';
 import Colors from './Colors';
 import Sizes from './Sizes';
 import ItemMaterial from './ItemMaterial';
@@ -88,11 +96,6 @@ const ShareLiveChatReview = styled.button`
   display: inline-block;
 `;
 
-const Img = styled.img`
-    width: 10px;
-    height: 10px;
-`;
-
 const Inner = styled.div`
   display:inline-block;
 `;
@@ -108,6 +111,45 @@ const SocialMediaIcons = styled.img`
   padding-right:2px;
 `;
 
+const FacebookIcon = Facebook.extend`
+  height: 10px;
+  width: 20px;
+`;
+
+const TwitterIcon = Twitter.extend`
+  height: 10px;
+  width: 20px;
+`;
+
+const TumblrIcon = Tumblr.extend`
+  height: 10px;
+  width: 20px;
+`;
+
+const GoogleIcon = Google.extend`
+  height: 10px;
+  width: 20px;
+`;
+
+const MailIcon = Mail.extend`
+  height: 10px;
+  width: 20px;
+`;
+
+const ShareIcon = Share.extend`
+    width: 10px;
+    height: 10px;
+`;
+
+const ChatIcon = Chat.extend`
+    width: 10px;
+    height: 10px;
+`;
+
+const StarIcon = Star.extend`
+    width: 10px;
+    height: 10px;
+`;
 
 /* ************************** APP COMPONENT ******************************* */
 class App extends React.Component {
@@ -168,26 +210,26 @@ class App extends React.Component {
 
                 <ShareLiveChatReviewDiv>
                   <Inner>
-                    <ShareLiveChatReview onClick={() => this.toggleShare()}><Img src="share.png" /> Share</ShareLiveChatReview>
+                    <ShareLiveChatReview onClick={() => this.toggleShare()}><ShareIcon /> Share</ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>
-                          <SocialMediaIcons src="facebook.png" />
-                          <SocialMediaIcons src="twitter.png" />
-                          <SocialMediaIcons src="pintrest.png" />
-                          <SocialMediaIcons src="tumblr.png" />
-                          <SocialMediaIcons src="googleplus.png" />
-                          <SocialMediaIcons src="email.png" />
+                          <FacebookIcon />
+                          <TwitterIcon />
+                          {/* <PinterestIcon /> */}
+                          <TumblrIcon />
+                          <GoogleIcon />
+                          <MailIcon />
                         </div>
                     }
                   </Inner>
 
                   <Inner>
-                    <ShareLiveChatReview><Img src="square-bubble.png" /> Live Chat</ShareLiveChatReview>
+                    <ShareLiveChatReview><ChatIcon /> Live Chat</ShareLiveChatReview>
                   </Inner>
 
                   <Inner>
-                    <ShareLiveChatReview><Img src="star.png" /> Reviews</ShareLiveChatReview>
+                    <ShareLiveChatReview><StarIcon /> Reviews</ShareLiveChatReview>
                   </Inner>
                 </ShareLiveChatReviewDiv>
 
