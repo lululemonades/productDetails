@@ -26,3 +26,4 @@ app.get('/productDetails/:id', (req, res) => {
     });
 });
 
+module.exports = app;
