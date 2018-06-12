@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import Colors from './Colors.jsx';
-import Sizes from './Sizes.jsx';
-import ItemMaterial from './ItemMaterial.jsx';
+import Colors from './Colors';
+import Sizes from './Sizes';
+import ItemMaterial from './ItemMaterial';
 
 /* ************************* STYLED-COMPONENTS ************************* */
 const Body = styled.body`
@@ -39,8 +39,8 @@ const Span = styled.span`
 `;
 
 const Description = styled.p`
-  font-size: 12px;
-  padding:10px;
+  font-size: 14px;
+  padding-bottom: 10px;
   border-bottom:1px solid #e0e0e0;
   margin-bottom: 10px;
 `;
@@ -168,7 +168,7 @@ class App extends React.Component {
 
                 <ShareLiveChatReviewDiv>
                   <Inner>
-                    <ShareLiveChatReview onClick={() => this.toggleShare}><Img src="share.png" /> Share</ShareLiveChatReview>
+                    <ShareLiveChatReview onClick={() => this.toggleShare()}><Img src="share.png" /> Share</ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>

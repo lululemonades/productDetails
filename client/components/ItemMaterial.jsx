@@ -60,7 +60,7 @@ class ItemMaterial extends React.Component {
   render() {
     return (
       <div>
-        <ItemMaterialStyle onClick={() => this.toggleFabric}>
+        <ItemMaterialStyle onClick={() => this.toggleFabric()}>
           <FabricCareFeaturesOuterDiv>
             <div>Fabric</div>
             <Plus>+</Plus>
@@ -68,7 +68,7 @@ class ItemMaterial extends React.Component {
           {this.state.displayFabricInfo && <div>{this.props.fabric}</div>}
         </ItemMaterialStyle>
 
-        <ItemMaterialStyle onClick={() => this.toggleCare}>
+        <ItemMaterialStyle onClick={() => this.toggleCare()}>
           <FabricCareFeaturesOuterDiv>
             <div>Care</div>
             <Plus>+</Plus>
@@ -76,7 +76,7 @@ class ItemMaterial extends React.Component {
           {this.state.displayCareInfo && <div>{this.props.care}</div>}
         </ItemMaterialStyle>
 
-        <ItemMaterialStyle onClick={() => this.toggleFeatures}>
+        <ItemMaterialStyle onClick={() => this.toggleFeatures()}>
           <FabricCareFeaturesOuterDiv>
             <div>Features</div>
             <Plus>+</Plus>
