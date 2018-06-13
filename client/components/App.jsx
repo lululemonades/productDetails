@@ -16,8 +16,6 @@ const Theme = styled.div`
     font-weight: normal;
     margin: 30px;
     background-color: #fafafa;
-    position: -webkit-sticky;
-    position: sticky;
     top: 0;
 `;
 
