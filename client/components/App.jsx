@@ -28,6 +28,9 @@ const ProductDetails = styled.div`
     min-width: 317px;
     max-width: 450px;
     margin: 60px;
+    position: absolute;
+    top: 100px;
+    right: 0px;
     background-color: #fafafa
     float: right;
 `;
