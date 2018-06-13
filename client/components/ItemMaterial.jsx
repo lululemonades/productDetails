@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Shake from 'react-reveal/Shake';
 
 const ItemMaterialStyle = styled.div`
   border:1px solid #fafafa;
   background-color: white;
   box-sizing: border-box;
-  font-size: 13px;
+  font-size: 14pt;
   font-weight: normal;
   border-bottom: 1.5px solid #e0e0e0;
   padding: 15px 17px 13px;
@@ -26,6 +27,10 @@ const FabricCareFeaturesOuterDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const Paragraph = styled.div`
+  font-size: 12pt;
 `;
 
 class ItemMaterial extends React.Component {
@@ -65,7 +70,7 @@ class ItemMaterial extends React.Component {
             <div>Fabric</div>
             <Plus>+</Plus>
           </FabricCareFeaturesOuterDiv>
-          {this.state.displayFabricInfo && <div>{this.props.fabric}</div>}
+          {this.state.displayFabricInfo && <Shake><Paragraph>{this.props.fabric}</Paragraph></Shake>}
         </ItemMaterialStyle>
 
         <ItemMaterialStyle onClick={() => this.toggleCare()}>
@@ -73,7 +78,7 @@ class ItemMaterial extends React.Component {
             <div>Care</div>
             <Plus>+</Plus>
           </FabricCareFeaturesOuterDiv>
-          {this.state.displayCareInfo && <div>{this.props.care}</div>}
+          {this.state.displayCareInfo && <Shake><Paragraph>{this.props.care}</Paragraph></Shake>}
         </ItemMaterialStyle>
 
         <ItemMaterialStyle onClick={() => this.toggleFeatures()}>
@@ -81,7 +86,7 @@ class ItemMaterial extends React.Component {
             <div>Features</div>
             <Plus>+</Plus>
           </FabricCareFeaturesOuterDiv>
-          {this.state.displayFeaturesInfo && <div>{this.props.features}</div>}
+          {this.state.displayFeaturesInfo && <Shake><Paragraph>{this.props.features}</Paragraph></Shake>}
         </ItemMaterialStyle>
       </div>
     );

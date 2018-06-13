@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 
 const ColorBox = styled.div`
   float: left;
-  width: 50px;
-  height: 20px;
-  margin: 5px;
+  width: 47px;
+  height: 21px;
+  margin: 22px 10px;
   border: 1px solid rgba(0, 0, 0, .2);
   cursor: pointer;
 `;
 
 const ColorName = styled.div`
-  font-size:10px;
-  margin: 5px;
+  font-size:12pt;
+  margin: 10px;
+  padding: 0px;
   clear: left;
 `;
 

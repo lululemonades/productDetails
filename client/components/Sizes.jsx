@@ -4,14 +4,19 @@ import PropTypes from 'prop-types';
 
 const Select = styled.select`
   align-items: center;
+  position: relative;
+  background-color: white;
+  box-shadow: 1px 1px 4px 0 hsla(0,0%,88%,.5);
   display: flex;
+  height: 45px;
+  width: 296px;
+  padding: 10px;
+  font-family: 'Josefin Sans';
+  font-size: 12pt;
+  font-weight: 300;
   margin-top: 2px;
   justify-content:space-between;
-  position: relative;
   flex-flow: row nowrap;
-  height: 44px;
-  width: 232px;
-  padding: 10px;
 `;
 
 const Sizes = props => (

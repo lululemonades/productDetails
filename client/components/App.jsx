@@ -6,9 +6,6 @@ import { Twitter } from 'styled-icons/fa-brands/Twitter';
 import { Tumblr } from 'styled-icons/fa-brands/Tumblr';
 import { Google } from 'styled-icons/fa-brands/Google';
 import { Mail } from 'styled-icons/feather/Mail';
-import { Share } from 'styled-icons/material/Share';
-import { Chat } from 'styled-icons/material/Chat';
-import { Star } from 'styled-icons/fa-regular/Star';
 import Colors from './Colors';
 import Sizes from './Sizes';
 import ItemMaterial from './ItemMaterial';
@@ -19,6 +16,9 @@ const Theme = styled.div`
     font-weight: normal;
     margin: 30px;
     background-color: #fafafa;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 `;
 
 /* *******************     PRODUCT DETAILS       *********************** */
@@ -101,6 +101,8 @@ const ShareLiveChatReview = styled.button`
   padding: 15px 21px;
   cursor: pointer;
   letter-spacing: 0px;
+  display: flex;
+  align-items: center;
   outline: none;
   border: none;
   overflow: hidden;
@@ -109,12 +111,18 @@ const ShareLiveChatReview = styled.button`
 `;
 
 const Inner = styled.div`
-  display:inline-block;
+  display: inline-block;
 `;
 
 const ShareLiveChatReviewDiv = styled.div`
   display: flex;
   align-items: flex-start;
+`;
+
+const Img = styled.img`
+  height: 20px;
+  width: 20px;
+  justify-content:center;
 `;
 
 const FacebookIcon = Facebook.extend`
@@ -140,21 +148,6 @@ const GoogleIcon = Google.extend`
 const MailIcon = Mail.extend`
   height: 10px;
   width: 20px;
-`;
-
-const ShareIcon = Share.extend`
-    width: 13px;
-    height: 13px;
-`;
-
-const ChatIcon = Chat.extend`
-    width: 13px;
-    height: 13px;
-`;
-
-const StarIcon = Star.extend`
-    width: 13px;
-    height: 13px;
 `;
 
 /* ************************** APP COMPONENT ******************************* */
@@ -216,7 +209,7 @@ class App extends React.Component {
 
                 <ShareLiveChatReviewDiv>
                   <Inner>
-                    <ShareLiveChatReview onClick={() => this.toggleShare()}><ShareIcon /> Share</ShareLiveChatReview>
+                    <ShareLiveChatReview onClick={() => this.toggleShare()}><Img src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" />Share</ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>
@@ -229,13 +222,11 @@ class App extends React.Component {
                         </div>
                     }
                   </Inner>
-
                   <Inner>
-                    <ShareLiveChatReview><ChatIcon /> Live Chat</ShareLiveChatReview>
+                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" />Live Chat</ShareLiveChatReview>
                   </Inner>
-
                   <Inner>
-                    <ShareLiveChatReview><StarIcon /> Reviews</ShareLiveChatReview>
+                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" />Reviews</ShareLiveChatReview>
                   </Inner>
                 </ShareLiveChatReviewDiv>
 
