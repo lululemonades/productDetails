@@ -16,7 +16,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'product-details-module-bundle.js',
     path: path.join(`${__dirname}/public`),
   },
   resolve: {
