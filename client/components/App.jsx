@@ -14,7 +14,7 @@ import Sizes from './Sizes';
 import ItemMaterial from './ItemMaterial';
 
 /* ************************* STYLED-COMPONENTS ************************* */
-const Body = styled.body`
+const Theme = styled.div`
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     margin: 30px;
@@ -23,8 +23,10 @@ const Body = styled.body`
 
 /* *******************     PRODUCT DETAILS       *********************** */
 const ProductDetails = styled.div`
-    height: 50%;
+    height: auto;
     width: 30%;
+    min-width: 317px;
+    max-width: 450px;
     margin: 60px;
     background-color: #fafafa
     float: right;
@@ -32,27 +34,36 @@ const ProductDetails = styled.div`
 
 const ProductDetailsContainer = styled.div`
   margin:20px;
-  min-width: 317px;
-  max-width:322px;
 `;
 
 const Title = styled.h1`
   font-weight: normal;
+  font-size: 25pt;
+  transform: scale(1, 1.1);
 `;
 
 const Span = styled.span`
-  font-weight: normal;
+  font-weight: 300;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: normal;
+  display: block;
+  padding-bottom: 47px;
+  font-size: 14pt;
 `;
 
 const Description = styled.p`
-  font-size: 14px;
-  padding-bottom: 10px;
+  font-size: 11.5pt;
+  font-weight: 400;
+  line-height: 17px;
+  padding-bottom: 25px;
   border-bottom:1px solid #e0e0e0;
   margin-bottom: 10px;
 `;
 
+const WhyWeMadeThis = styled.div`
+  font-size: 14pt;
+  transform: scale(1, 1.1);
+  padding-bottom: 18px;
+`;
 
 /* **************   ADD TO BAG + FINDINSTORE BUTTONS  ******************** */
 const Button = styled.button`
@@ -83,12 +94,13 @@ const FindInStore = Button.extend`
 
 /* ********************  SHARE-LIVECHAT-REVIEWS  ************************* */
 const ShareLiveChatReview = styled.button`
-  font-size: 10px;
+  font-size: 12pt;
+  font-family: 'Josefin Sans';
   background-color: transparent;
   background-repeat: no-repeat;
-  padding: 15px 17px 13px;
+  padding: 15px 21px;
   cursor: pointer;
-  letter-spacing: 1.4px;
+  letter-spacing: 0px;
   outline: none;
   border: none;
   overflow: hidden;
@@ -131,18 +143,18 @@ const MailIcon = Mail.extend`
 `;
 
 const ShareIcon = Share.extend`
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
 `;
 
 const ChatIcon = Chat.extend`
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
 `;
 
 const StarIcon = Star.extend`
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
 `;
 
 /* ************************** APP COMPONENT ******************************* */
@@ -177,14 +189,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Body>
+      <Theme>
         <ProductDetails>
           {
             this.state.products.map(product => (
               <ProductDetailsContainer key={product}>
                 <Title>{product.title}</Title>
                 <Span>{product.price}</Span>
-                <div>Why we made this</div>
+                <WhyWeMadeThis>Why we made this</WhyWeMadeThis>
                 <Description>{product.description}</Description>
 
                 <div>
@@ -240,7 +252,7 @@ class App extends React.Component {
             ))
          }
         </ProductDetails>
-      </Body>
+      </Theme>
     );
   }
 }
