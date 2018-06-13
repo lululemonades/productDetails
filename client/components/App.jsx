@@ -106,8 +106,8 @@ const ShareLiveChatReview = styled.button`
   outline: none;
   border: none;
   overflow: hidden;
-  width: 100%;
-  display: inline-block;
+  ${'' /* width: 100%;
+  display: inline-block; */}
 `;
 
 const Inner = styled.div`
@@ -120,9 +120,8 @@ const ShareLiveChatReviewDiv = styled.div`
 `;
 
 const Img = styled.img`
-  height: 20px;
-  width: 20px;
-  justify-content:center;
+  height: 30px;
+  width: 30px;
 `;
 
 const FacebookIcon = Facebook.extend`
@@ -209,7 +208,7 @@ class App extends React.Component {
 
                 <ShareLiveChatReviewDiv>
                   <Inner>
-                    <ShareLiveChatReview onClick={() => this.toggleShare()}><Img src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" />Share</ShareLiveChatReview>
+                    <ShareLiveChatReview onClick={() => this.toggleShare()}><Img src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" /><div>Share</div></ShareLiveChatReview>
                     {
                         this.state.share &&
                         <div>
@@ -223,10 +222,10 @@ class App extends React.Component {
                     }
                   </Inner>
                   <Inner>
-                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" />Live Chat</ShareLiveChatReview>
+                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" /><div>Live Chat</div></ShareLiveChatReview>
                   </Inner>
                   <Inner>
-                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" />Reviews</ShareLiveChatReview>
+                    <ShareLiveChatReview><Img src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" /><div>Reviews</div></ShareLiveChatReview>
                   </Inner>
                 </ShareLiveChatReviewDiv>
 
