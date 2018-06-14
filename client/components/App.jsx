@@ -15,6 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(`/productDetails/${this.state.itemId}`)
     axios.get(`/productDetails/${this.state.itemId}`)
       .then((response) => {
         // console.log('look', response.data);
