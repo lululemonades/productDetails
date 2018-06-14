@@ -1,5 +1,5 @@
 #product-details {
-
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i');
   body {
       font-family: 'Josefin Sans', sans-serif;
       font-weight: normal;
@@ -10,6 +10,7 @@
   
   /* PRODUCT DETAILS MODULE */
   .product-details {
+      font-family: 'Josefin Sans', sans-serif;
       height: auto;
       width: 30%;
       min-width: 317px;
