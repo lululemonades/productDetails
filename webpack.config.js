@@ -1,8 +1,9 @@
+
 const path = require('path');
 
 module.exports = {
   // context: __dirname + '/client',
-  entry: './client/index.js',
+  entry: ['./client/index.js', './public/main.scss'],
   module: {
     rules: [
       {
@@ -11,8 +12,11 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015', 'env'],
-          plugins: ['babel-plugin-styled-components'],
         },
+      },
+      {
+        test: /\.scss?/,
+        loader: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

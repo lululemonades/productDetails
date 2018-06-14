@@ -1,37 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Bounce from 'react-reveal/Bounce';
-
-const ItemMaterialStyle = styled.div`
-  border:1px solid #fafafa;
-  background-color: white;
-  box-sizing: border-box;
-  font-size: 14pt;
-  font-weight: normal;
-  border-bottom: 1.5px solid #e0e0e0;
-  padding: 15px 17px 13px;
-  text-align: left;
-  text-decoration: none;
-  cursor: pointer;
-  letter-spacing: 0px;
-  width: 100%;
-  margin-top:10px;
-`;
-
-const Plus = styled.div`
-  font-size:14pt;
-`;
-
-const FabricCareFeaturesOuterDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Paragraph = styled.div`
-  font-size: 12pt;
-`;
 
 class ItemMaterial extends React.Component {
   constructor(props) {
@@ -64,29 +33,29 @@ class ItemMaterial extends React.Component {
   render() {
     return (
       <div>
-        <ItemMaterialStyle onClick={() => this.toggleFabric()}>
-          <FabricCareFeaturesOuterDiv>
+        <div className="item-material" onClick={() => this.toggleFabric()}>
+          <div className="item-material-container">
             <div>Fabric</div>
-            <Plus>+</Plus>
-          </FabricCareFeaturesOuterDiv>
-          {this.state.displayFabricInfo && <Bounce><Paragraph>{this.props.fabric}</Paragraph></Bounce>}
-        </ItemMaterialStyle>
+            <div id="plus">+</div>
+          </div>
+          {this.state.displayFabricInfo && <Bounce><div style={{ fontSize: '12pt' }}>{this.props.fabric}</div></Bounce>}
+        </div>
 
-        <ItemMaterialStyle onClick={() => this.toggleCare()}>
-          <FabricCareFeaturesOuterDiv>
+        <div className="item-material" onClick={() => this.toggleCare()}>
+          <div className="item-material-container">
             <div>Care</div>
-            <Plus>+</Plus>
-          </FabricCareFeaturesOuterDiv>
-          {this.state.displayCareInfo && <Bounce><Paragraph>{this.props.care}</Paragraph></Bounce>}
-        </ItemMaterialStyle>
+            <div id="plus">+</div>
+          </div>
+          {this.state.displayCareInfo && <Bounce><div style={{ fontSize: '12pt' }} >{this.props.care}</div></Bounce>}
+        </div>
 
-        <ItemMaterialStyle onClick={() => this.toggleFeatures()}>
-          <FabricCareFeaturesOuterDiv>
+        <div className="item-material" onClick={() => this.toggleFeatures()}>
+          <div className="item-material-container">
             <div>Features</div>
-            <Plus>+</Plus>
-          </FabricCareFeaturesOuterDiv>
-          {this.state.displayFeaturesInfo && <Bounce><Paragraph>{this.props.features}</Paragraph></Bounce>}
-        </ItemMaterialStyle>
+            <div id="plus">+</div>
+          </div>
+          {this.state.displayFeaturesInfo && <Bounce><div style={{ fontSize: '12pt' }}>{this.props.features}</div></Bounce>}
+        </div>
       </div>
     );
   }
