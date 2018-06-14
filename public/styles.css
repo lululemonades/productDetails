@@ -1,30 +1,58 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
-    margin: 50px;
+    margin: 30px;
     background-color:#fafafa;
+    top: 0;
 }
 
 /* PRODUCT DETAILS MODULE */
 .product-details {
-    height: 350px;
-    width: 350px;
+    height: auto;
+    width: 30%;
+    min-width: 317px;
+    max-width: 450px;
+    margin: 60px;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    background-color: #fafafa;
+    float: right;
+}
+
+.product-details-container {
+    margin: 20px;
 }
 
 /* ITEM TITLE, PRICE, DESCRIPTION */
-h1 {
+.title {
     font-weight: normal;
+    font-size: 25pt;
+    transform: scale(1, 1.1);}
+
+.price {
+    font-weight: 300;
+    font-family: 'Josefin Sans', sans-serif;
+    display: block;
+    padding-bottom: 47px;
+    font-size: 14pt;
 }
 
-p {
-    font-size:12px
+.description-title {
+    font-size: 14pt;
+    transform: scale(1, 1.1);
+    padding-bottom: 18px;
 }
 
-.horizontal-line {
-    padding:0;
+.description {
+    font-size: 11.5pt;
+    font-weight: 400;
+    line-height: 17px;
+    padding-bottom: 25px;
     border-bottom:1px solid #e0e0e0;
     margin-bottom: 10px;
 }
+
 
 /* ADD TO BAD + FIND IN STORE BUTTONS */
 
@@ -60,26 +88,28 @@ p {
     height:10px;
     width:10px;
 }
-
-.dropdown-share {
-    height: 10px;
-    width: 20px;
-    text-align: left;
+.share-live-chat-review-div {
+    display: flex;
+    align-items: flex-start;
+}
+.icons {
+    height: 30px;
+    width: 30px;
 }
 
-
-button {
-    font-size: 10px;
+.share-live-chat-review-button {
+    font-size: 12pt;
+    font-family: 'Josefin Sans';
     background-color: transparent;
     background-repeat: no-repeat;
-    padding: 15px 17px 13px;
+    padding: 15px 21px;
     cursor: pointer;
-    letter-spacing: 1.4px;
-    outline:none;
-    border:none;
-    overflow:hidden;
-    width: 100%;
-    display: inline-block;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    overflow: hidden;
 }
 
 .vertical-line {
@@ -87,56 +117,71 @@ button {
 }
 
 .inner {
-    display:inline-block;
+    display: inline-block;
 }
 
 /* FABRIC - CARE - FEATURES */
 .item-material {
     border:1px solid #fafafa;
-    box-shadow: 10px 5px 5px #e0e0e0;
     background-color: white;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 14pt;
     font-weight: normal;
+    border-bottom: 1.5px solid #e0e0e0;
     padding: 15px 17px 13px;
     text-align: left;
     text-decoration: none;
     cursor: pointer;
-    letter-spacing: 1.4px;
+    letter-spacing: 0px;
     width: 100%;
     margin-top:10px;
 }
 
+#plus {
+    font-size: 14pt;
+}
+
+.item-material-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /* SIZES COMPONENT */
 
 .sizes {
     align-items: center;
+    position: relative;
+    background-color: white;
+    box-shadow: 1px 1px 4px 0 hsla(0,0%,88%,.5);
     display: flex;
+    height: 45px;
+    width: 296px;
+    padding: 10px;
+    font-family: 'Josefin Sans';
+    font-size: 12pt;
+    font-weight: 300;
     margin-top: 2px;
     justify-content:space-between;
-    position: relative;
     flex-flow: row nowrap;
-    height: 44px;
-    width: 232px;
 }
 
 
 /* COLORS COMPONENT */
 .color-box {
     float: left;
-    width: 50px;
-    height: 20px;
-    margin: 5px;
+    width: 47px;
+    height: 21px;
+    margin: 22px 10px;
     border: 1px solid rgba(0, 0, 0, .2);
     cursor: pointer;
   }
 
 .color-name {
-    font-size:10px;
+    font-size:12pt;
     margin: 5px;
     clear: left;
 }
-  
+
 .sku {
-    font-size: 10px
+    font-size: 10pt;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Colors extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Colors extends React.Component {
       <div>
         {
           this.props.colors.map(color => (
-            <div>
+            <div key={color}>
               <div className="color-box" style={{ backgroundColor: color }} onClick={() => this.onClick(color)} />
             </div>
           ))
@@ -42,5 +42,9 @@ class Colors extends React.Component {
     );
   }
 }
+
+Colors.propTypes = {
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Colors;

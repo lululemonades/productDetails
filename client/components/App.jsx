@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import Colors from './Colors.jsx';
-import Sizes from './Sizes.jsx';
-import ItemMaterial from './ItemMaterial.jsx';
+import Colors from './Colors';
+import Sizes from './Sizes';
+import ItemMaterial from './ItemMaterial';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,12 +39,11 @@ class App extends React.Component {
         <div className="product-details">
           {
             this.state.products.map(product => (
-              <div>
-                <h1>{product.title}</h1>
-                <span className="price">{product.price}</span>
-                <div>Why we made this</div>
-                <p>{product.description}</p>
-                <div className="horizontal-line" />
+              <div className="product-details-container" key={product}>
+                <h1 className="title">{product.title}</h1>
+                <span className="price">{product.price} <span style={{ fontSize: '9pt' }}>USD</span></span>
+                <div className="description-title">Why we made this</div>
+                <p className="description">{product.description}</p>
 
                 <div>
                   <Colors colors={product.color} />
@@ -66,27 +65,32 @@ class App extends React.Component {
                   </div>
                 </div>
 
-                <div className="social">
+                <div className="share-live-chat-review-div">
                   <div className="inner">
-                    <button onClick={this.toggleShare.bind(this)}><img alt="" src="share.png" id="share" /> Share</button>
+                    <button className="share-live-chat-review-button" onClick={() => this.toggleShare()}><img className="icons" alt="" src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" /><div>Share</div></button>
                     {
                       this.state.share &&
                       <div>
-                        <div>Facebook</div>
-                        <div>Email</div>
-                        <div>Message</div>
+                        <div style={{ letterSpacing: '6px' }}>
+                          <i className="fab fa-facebook-f fa-sm" />
+                          <i className="fab fa-twitter fa-sm" />
+                          <i className="fab fa-pinterest-p fa-sm" />
+                          <i className="fab fa-tumblr fa-sm" />
+                          <i className="fab fa-google-plus-g fa-sm" />
+                          <i className="far fa-envelope fa-sm" />
+                        </div>
                       </div>
                     }
                   </div>
 
-                  <span className="vertical-line" />
+                  <div className="vertical-line" />
                   <div className="inner">
-                    <button><img alt="" src="square-bubble.png" id="share" /> Live Chat</button>
+                    <button className="share-live-chat-review-button"><img alt="" className="icons" src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" /><div>Live Chat</div></button>
                   </div>
 
-                  <span className="vertical-line" />
+                  <div className="vertical-line" />
                   <div className="inner">
-                    <button><img src="star.png" alt="" id="share" /> Reviews</button>
+                    <button className="share-live-chat-review-button"><img className="icons" src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" alt="" /><div>Reviews</div></button>
                   </div>
 
 

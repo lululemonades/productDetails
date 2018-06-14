@@ -1,14 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const sizes = props => (
+const Sizes = props => (
   <div>
-    <select className="sizes"> 
+    <select className="sizes">
       <option disabled selected>Select Size</option>
       {
-        props.sizes.map(size => <option>{size} </option>)
+        props.sizes.map(size => <option key={size}>{size} </option>)
       }
     </select>
   </div>
 );
 
-export default sizes;
+Sizes.propTypes = {
+  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
+
+export default Sizes;

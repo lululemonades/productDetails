@@ -1,0 +1,190 @@
+#product-details {
+
+  body {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: normal;
+      margin: 30px;
+      background-color:#fafafa;
+      top: 0;
+  }
+  
+  /* PRODUCT DETAILS MODULE */
+  .product-details {
+      height: auto;
+      width: 30%;
+      min-width: 317px;
+      max-width: 450px;
+      margin: 60px;
+      position: absolute;
+      top: 100px;
+      right: 0px;
+      background-color: #fafafa;
+      float: right;
+  }
+  
+  .product-details-container {
+      margin: 20px;
+  }
+  
+  /* ITEM TITLE, PRICE, DESCRIPTION */
+  .title {
+      font-weight: normal;
+      font-size: 25pt;
+      transform: scale(1, 1.1);}
+  
+  .price {
+      font-weight: 300;
+      font-family: 'Josefin Sans', sans-serif;
+      display: block;
+      padding-bottom: 47px;
+      font-size: 14pt;
+  }
+  
+  .description-title {
+      font-size: 14pt;
+      transform: scale(1, 1.1);
+      padding-bottom: 18px;
+  }
+  
+  .description {
+      font-size: 11.5pt;
+      font-weight: 400;
+      line-height: 17px;
+      padding-bottom: 25px;
+      border-bottom:1px solid #e0e0e0;
+      margin-bottom: 10px;
+  }
+  
+  
+  /* ADD TO BAD + FIND IN STORE BUTTONS */
+  
+  .button {
+      box-sizing: border-box;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 15px 17px 13px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      letter-spacing: 1.4px;
+      width: 100%;
+  }
+  
+  #bag {
+      background-color: #d22030;
+      border: 1px solid #d22030;
+      color: #fff;
+      margin-top: 10px;
+  }
+  
+  #store {
+      background-color: #fff;
+      border: 1px solid #000;
+      margin-top: 10px;
+  }
+  
+  
+  /* SHARE - LIVECHAT - REVIEWS  */
+  #share {
+      height:10px;
+      width:10px;
+  }
+  .share-live-chat-review-div {
+      display: flex;
+      align-items: flex-start;
+  }
+  .icons {
+      height: 30px;
+      width: 30px;
+  }
+  
+  .share-live-chat-review-button {
+      font-size: 12pt;
+      font-family: 'Josefin Sans';
+      background-color: transparent;
+      background-repeat: no-repeat;
+      padding: 15px 21px;
+      cursor: pointer;
+      letter-spacing: 0px;
+      display: flex;
+      align-items: center;
+      outline: none;
+      border: none;
+      overflow: hidden;
+  }
+  
+  .vertical-line {
+    border-right:1px solid #e0e0e0;
+  }
+  
+  .inner {
+      display: inline-block;
+  }
+  
+  /* FABRIC - CARE - FEATURES */
+  .item-material {
+      border:1px solid #fafafa;
+      background-color: white;
+      box-sizing: border-box;
+      font-size: 14pt;
+      font-weight: normal;
+      border-bottom: 1.5px solid #e0e0e0;
+      padding: 15px 17px 13px;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      letter-spacing: 0px;
+      width: 100%;
+      margin-top:10px;
+  }
+  
+  #plus {
+      font-size: 14pt;
+  }
+  
+  .item-material-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  /* SIZES COMPONENT */
+  
+  .sizes {
+      align-items: center;
+      position: relative;
+      background-color: white;
+      box-shadow: 1px 1px 4px 0 hsla(0,0%,88%,.5);
+      display: flex;
+      height: 45px;
+      width: 296px;
+      padding: 10px;
+      font-family: 'Josefin Sans';
+      font-size: 12pt;
+      font-weight: 300;
+      margin-top: 2px;
+      justify-content:space-between;
+      flex-flow: row nowrap;
+  }
+  
+  
+  /* COLORS COMPONENT */
+  .color-box {
+      float: left;
+      width: 47px;
+      height: 21px;
+      margin: 22px 10px;
+      border: 1px solid rgba(0, 0, 0, .2);
+      cursor: pointer;
+    }
+  
+  .color-name {
+      font-size:12pt;
+      margin: 5px;
+      clear: left;
+  }
+  
+  .sku {
+      font-size: 10pt;
+  }
+}
