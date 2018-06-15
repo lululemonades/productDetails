@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import Container from './components/App.jsx';
 
-ReactDOM.render( < App / >, document.getElementById('product-details'));
+ReactDOM.render( <Container / >, document.getElementById('product-details'));

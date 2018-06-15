@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Sticky from 'react-stickynode';
 import Colors from './Colors';
 import Sizes from './Sizes';
 import ItemMaterial from './ItemMaterial';
@@ -15,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`/productDetails/${this.state.itemId}`)
+    console.log(`/productDetails/${this.state.itemId}`);
     axios.get(`/productDetails/${this.state.itemId}`)
       .then((response) => {
         // console.log('look', response.data);
@@ -36,10 +37,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="product-details">
-          {
+      <div className="product-details">
+        {
             this.state.products.map(product => (
+            <Sticky enabled top={0} bottomBoundary={4655.9549560546875}>
               <div className="product-details-container" key={product}>
                 <h1 className="title">{product.title}</h1>
                 <span className="price">{product.price} <span style={{ fontSize: '9pt' }}>USD</span></span>
@@ -102,12 +103,22 @@ class App extends React.Component {
                   <span className="sku">SKU: {product._id}</span>
                 </div>
               </div>
+          </Sticky>
             ))
          }
-        </div>
       </div>
     );
   }
 }
 
-export default App;
+class Container extends React.Component {
+  render() {
+    return (
+      <div>
+          <App />
+      </div>
+    );
+  }
+}
+
+export default Container;

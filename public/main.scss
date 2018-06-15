@@ -12,12 +12,13 @@
   .product-details {
       font-family: 'Josefin Sans', sans-serif;
       height: auto;
-      width: 30%;
+      width: 35%;
       min-width: 317px;
-      max-width: 450px;
+      max-width: 462px;
       margin: 60px;
+      margin-right: 85px;
       position: absolute;
-      top: 100px;
+      top: 0;
       right: 0px;
       background-color: #fafafa;
       float: right;
@@ -25,6 +26,7 @@
   
   .product-details-container {
       margin: 20px;
+      margin-top: 110px;
   }
   
   /* ITEM TITLE, PRICE, DESCRIPTION */
