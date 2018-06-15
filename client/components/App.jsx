@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
-      itemId: 1,
+      itemId: window.location.search.slice(1),
       share: false,
     };
   }
