@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
+app.use('/:id', express.static('public'));
 app.use(cors());
 
 app.listen(port, () => {
@@ -19,12 +20,12 @@ app.listen(port, () => {
 app.get('/productDetails/:id', (req, res) => {
   // console.log('look here', req.params.id)
 
-  console.log('req.url', req.url)
+  console.log('req.url', req.url);
   db.ProductDetail.find({ id: req.params.id })
     .then((data) => {
       // console.log('YOUR DATA', data);
-      const product = data.slice(0, 1);
-      res.send(product);
+      // const product = data.slice(0, 1);
+      res.send(data);
     }).catch((err) => {
       console.log('CANNOT RETRIEVE FROM DB', err);
     });
