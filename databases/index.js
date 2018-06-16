@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const itemDetails = require('./mockData');
 
-mongoose.connect('mongodb://database/productDetails', (err) => {
+mongoose.connect('mongodb://localhost:27017/productDetails', (err) => {
   if (err) {
     console.log('YOUR DB IS NOT CONNECTED');
   } else {
@@ -22,6 +22,7 @@ const productSchema = mongoose.Schema({
 });
 
 const ProductDetail = mongoose.model('ProductDetail', productSchema);
+ProductDetail.collection.drop();
 // console.log(itemDetails)
 // iterate through item
 itemDetails.forEach((item) => {
