@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const itemDetails = require('./mockData');
 
-mongoose.connect('mongodb://localhost:27017/productDetails', (err) => {
+mongoose.connect('mongodb://admin:password1@ds163330.mlab.com:63330/product-details', (err) => {
   if (err) {
     console.log('YOUR DB IS NOT CONNECTED');
   } else {
