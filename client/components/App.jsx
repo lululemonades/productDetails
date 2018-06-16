@@ -10,16 +10,23 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
-      itemId: window.location.search.slice(1),
       share: false,
     };
   }
 
   componentDidMount() {
-    console.log(`/productDetails/${this.state.itemId}`);
-    axios.get(`/productDetails/${this.state.itemId}`)
+    let id = window.location.pathname.slice(1);
+
+    if (!id) {
+      id = 1;
+    }
+    
+    this.getProductDetails(id);
+  }
+
+  getProductDetails(id) {
+    axios.get(`/productDetails/${id}`)
       .then((response) => {
-        // console.log('look', response.data);
         this.setState({
           products: [...response.data],
         });
@@ -40,32 +47,32 @@ class App extends React.Component {
       <div className="product-details">
         {
             this.state.products.map(product => (
-            <Sticky enabled top={0} bottomBoundary={4655.9549560546875}>
-              <div className="product-details-container" key={product}>
-                <h1 className="title">{product.title}</h1>
-                <span className="price">{product.price} <span style={{ fontSize: '9pt' }}>USD</span></span>
-                <div className="description-title">Why we made this</div>
-                <p className="description">{product.description}</p>
+              <Sticky enabled top={0} bottomBoundary={4655.9549560546875}>
+                <div className="product-details-container" key={product}>
+                  <h1 className="title">{product.title}</h1>
+                  <span className="price">{product.price} <span style={{ fontSize: '9pt' }}>USD</span></span>
+                  <div className="description-title">Why we made this</div>
+                  <p className="description">{product.description}</p>
 
-                <div>
-                  <Colors colors={product.color} />
-                </div>
+                  <div>
+                    <Colors colors={product.color} />
+                  </div>
 
-                <br />
+                  <br />
 
-                <div>
-                  <Sizes sizes={product.size} />
-                </div>
+                  <div>
+                    <Sizes sizes={product.size} />
+                  </div>
 
-                <div>
-                  <button className="button" id="bag">ADD TO BAG</button>
-                  <button className="button" id="store">FIND IN STORE</button>
-                </div>
+                  <div>
+                    <button className="button" id="bag">ADD TO BAG</button>
+                    <button className="button" id="store">FIND IN STORE</button>
+                  </div>
 
-                <div className="share-live-chat-review-div">
-                  <div className="inner">
-                    <button className="share-live-chat-review-button" onClick={() => this.toggleShare()}><img className="icons" alt="" src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" /><div>Share</div></button>
-                    {
+                  <div className="share-live-chat-review-div">
+                    <div className="inner">
+                      <button className="share-live-chat-review-button" onClick={() => this.toggleShare()}><img className="icons" alt="" src="https://www.dropbox.com/s/gs517cfxgfftiql/shareicon.svg?raw=1" /><div>Share</div></button>
+                      {
                       this.state.share &&
                       <div>
                         <div style={{ letterSpacing: '6px' }}>
@@ -78,32 +85,32 @@ class App extends React.Component {
                         </div>
                       </div>
                     }
+                    </div>
+
+                    <div className="vertical-line" />
+                    <div className="inner">
+                      <button className="share-live-chat-review-button"><img alt="" className="icons" src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" /><div>Live Chat</div></button>
+                    </div>
+
+                    <div className="vertical-line" />
+                    <div className="inner">
+                      <button className="share-live-chat-review-button"><img className="icons" src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" alt="" /><div>Reviews</div></button>
+                    </div>
+
+
                   </div>
 
-                  <div className="vertical-line" />
-                  <div className="inner">
-                    <button className="share-live-chat-review-button"><img alt="" className="icons" src="https://www.dropbox.com/s/ridlic1h8p5vn8h/chaticon.svg?raw=1" /><div>Live Chat</div></button>
+                  <div>
+                    <ItemMaterial
+                      fabric={product.fabric}
+                      care={product.care}
+                      features={product.features}
+                    />
+                    <br />
+                    <span className="sku">SKU: {product._id}</span>
                   </div>
-
-                  <div className="vertical-line" />
-                  <div className="inner">
-                    <button className="share-live-chat-review-button"><img className="icons" src="https://www.dropbox.com/s/u4ehp6c2f211sak/staricon.svg?raw=1" alt="" /><div>Reviews</div></button>
-                  </div>
-
-
                 </div>
-
-                <div>
-                  <ItemMaterial
-                    fabric={product.fabric}
-                    care={product.care}
-                    features={product.features}
-                  />
-                  <br />
-                  <span className="sku">SKU: {product._id}</span>
-                </div>
-              </div>
-          </Sticky>
+              </Sticky>
             ))
          }
       </div>
@@ -111,14 +118,4 @@ class App extends React.Component {
   }
 }
 
-class Container extends React.Component {
-  render() {
-    return (
-      <div>
-          <App />
-      </div>
-    );
-  }
-}
-
-export default Container;
+export default App;
