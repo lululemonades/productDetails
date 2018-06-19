@@ -11,10 +11,14 @@
 
 ## Related Projects
 
+  - Services
   - https://github.com/RapidRetail/productDetails
   - https://github.com/RapidRetail/reviews-component
   - https://github.com/RapidRetail/image-carousel
   - https://github.com/RapidRetail/you-may-also-like
+
+  - Proxy
+  - https://github.com/RapidRetail/grants-proxy
 
 ## Table of Contents
 
