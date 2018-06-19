@@ -1,13 +1,20 @@
-# Lululemon - Product Details Module
+# RapidRetail - Product Details Module
 
 > A clone of Lululemon's product details module. 
 
+## Contributors
+  - Kianna Quach
+  - Grant Yang
+  - Sam Rowland
+  - Simon Stroh
+  - Natalie Stam
+
 ## Related Projects
 
-  - https://github.com/lululemonades/productDetails
-  - https://github.com/lululemonades/reviews-component
-  - https://github.com/lululemonades/image-carousel
-  - https://github.com/lululemonades/you-may-also-like
+  - https://github.com/RapidRetail/productDetails
+  - https://github.com/RapidRetail/reviews-component
+  - https://github.com/RapidRetail/image-carousel
+  - https://github.com/RapidRetail/you-may-also-like
 
 ## Table of Contents
 
