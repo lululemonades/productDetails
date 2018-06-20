@@ -19,8 +19,7 @@ app.listen(port, () => {
 
 app.get('/productDetails/:id', (req, res) => {
   // console.log('look here', req.params.id)
-
-  console.log('req.url', req.url);
+  console.log('GET request... req.url is', req.url);
   db.ProductDetail.find({ id: req.params.id })
     .then((data) => {
       // console.log('YOUR DATA', data);
