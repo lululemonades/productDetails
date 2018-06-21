@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const db = require('../databases/index.js');
+const db = require('../databases/postgres.js');
 
 const port = process.env.PORT || 3001;
 

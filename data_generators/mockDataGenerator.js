@@ -1,11 +1,3 @@
-// "title":"Oil & Gas Production"
-// "price":"$96.53"
-// "description":"Pellentesque at nulla. Cum sociis natoque penatibus et magnis augue."
-// "color":["LightPink", "LightYellow", "LimeGreen"]
-// "size":[2,4,6,8,10,12]
-// "fabric":"In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt."
-// "care":"Tools"
-// "features":"Integer non velit."
 const loremIpsum = require('lorem-ipsum');
 const fs = require('fs');
 
@@ -176,15 +168,13 @@ const description = {
   sentenceUpperBound: 10, // Maximum words per sentence.
   paragraphLowerBound: 2, // Minimum sentences per paragraph.
   paragraphUpperBound: 3, // Maximum sentences per paragraph.
-  format: 'plain', // Plain text or html
-  random: Math.random, // A PRNG function. Uses Math.random by default
 };
 
 const sizes = [2, 4, 6, 8, 10, 12, 14];
 const maxPrice = 250;
-const randomSizes = () => sizes.slice(0, Math.floor(Math.random() * sizes.length));
-const randomPrice = () => Math.floor(Math.random() * maxPrice);
-const randomColorIndex = () => Math.floor(Math.random() * colors.length);
+const randomSizes = () => sizes.slice(0, 2 + Math.floor(Math.random() * sizes.length));
+const randomPrice = () => Math.ceil(Math.random() * maxPrice);
+const randomColorIndex = () => Math.ceil(Math.random() * colors.length);
 
 const append = (filename, resultString, count) => {
   fs.appendFileSync(`${filename}.tsv`, resultString);
@@ -194,8 +184,8 @@ const append = (filename, resultString, count) => {
 const generateProductDetails = () => {
   let resultString = '';
   for (let i = 1; i <= 10000000; i += 1) {
-    const newArr = [`"${loremIpsum(title)}"`, `"$${randomPrice()}"`, `"${loremIpsum(description)}"`, `${randomSizes()}`, `"${loremIpsum(threeWords)}"`, `"${loremIpsum(threeWords)}"`, `"${loremIpsum(threeWords)}"`];
-    const newLine = `${newArr.join('  ')}\n`;
+    const newArr = [`${loremIpsum(title)}`, `$${randomPrice()}`, `${loremIpsum(description)}`, `{${randomSizes()}}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`];
+    const newLine = `${newArr.join('\t')}\n`;
     resultString = resultString.concat(newLine);
     if (i % 100000 === 0) {
       append('mockProductDetails', resultString, i);
@@ -208,7 +198,7 @@ const generateProductColors = () => {
   let resultString = '';
   for (let i = 1; i <= 10000000; i += 1) {
     for (let k = 0; k < 4; k += 1) {
-      const newLine = `${i}  ${randomColorIndex()}\n`;
+      const newLine = `${i}\t${randomColorIndex()}\n`;
       resultString = resultString.concat(newLine);
     }
     if (i % 100000 === 0) {
