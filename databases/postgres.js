@@ -8,13 +8,6 @@ client.connect()
   .then(() => console.log('connected'))
   .catch(err => console.error('connection error', err.stack));
 
-
-// client.query('SELECT * FROM products WHERE id = 9888888;', (err, res) => {
-//   console.log('---TESTING---');
-//   console.log(res.rows[0]);
-//   client.end();
-// });
-
 module.exports = client;
 
 // const pool = new Pool({
