@@ -173,13 +173,43 @@ const description = {
 const sizes = [2, 4, 6, 8, 10, 12, 14];
 const maxPrice = 250;
 const randomSizes = () => sizes.slice(0, 2 + Math.floor(Math.random() * sizes.length));
-const randomPrice = () => Math.ceil(Math.random() * maxPrice);
-const randomColorIndex = () => Math.ceil(Math.random() * colors.length);
+const randomPrice = () => `$${Math.ceil(Math.random() * maxPrice)}`;
+const randomColorIndex = () => Math.floor(Math.random() * colors.length);
+const colorArray = () => {
+  const result = [];
+  for (let k = 0; k < 4; k += 1) {
+    result.push(colors[randomColorIndex()]);
+  }
+  return result;
+};
 
 const append = (filename, resultString, count) => {
-  fs.appendFileSync(`${filename}.tsv`, resultString);
+  fs.appendFileSync(`${filename}`, resultString);
   console.log(`Data was appended to ${filename}!`, count);
 };
+
+const generateCouchData = () => {
+  let resultString = '';
+  for (let i = 1; i <= 10000000; i += 1) {
+    const newJSON = {
+      productId: i,
+      title: loremIpsum(title),
+      price: randomPrice(),
+      description: loremIpsum(description),
+      size: randomSizes(),
+      fabric: loremIpsum(threeWords),
+      care: loremIpsum(threeWords),
+      features: loremIpsum(threeWords),
+      colors: colorArray(),
+    };
+    resultString = resultString.concat(`${JSON.stringify(newJSON)}\n`);
+    if (i % 100000 === 0) {
+      append('mockCouchData.json', resultString, i);
+      resultString = '';
+    }
+  }
+};
+// const newArr = [i, `${loremIpsum(title)}`, `$${randomPrice()}`, `${loremIpsum(description)}`, `{${randomSizes()}}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`, `${colorArray}`]; 
 
 const generateProductDetails = () => {
   let resultString = '';
@@ -188,7 +218,7 @@ const generateProductDetails = () => {
     const newLine = `${newArr.join('\t')}\n`;
     resultString = resultString.concat(newLine);
     if (i % 100000 === 0) {
-      append('mockProductDetails', resultString, i);
+      append('mockProductDetails.tsv', resultString, i);
       resultString = '';
     }
   }
@@ -202,7 +232,7 @@ const generateProductColors = () => {
       resultString = resultString.concat(newLine);
     }
     if (i % 100000 === 0) {
-      append('mockProductColors', resultString, i);
+      append('mockProductColors.tsv', resultString, i);
       resultString = '';
     }
   }
@@ -214,6 +244,7 @@ const generateColors = () => {
   }
 };
 
+generateCouchData();
 generateProductColors();
 generateProductDetails();
 generateColors();
