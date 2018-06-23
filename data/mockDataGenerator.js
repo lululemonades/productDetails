@@ -209,7 +209,6 @@ const generateCouchData = () => {
     }
   }
 };
-// const newArr = [i, `${loremIpsum(title)}`, `$${randomPrice()}`, `${loremIpsum(description)}`, `{${randomSizes()}}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`, `${loremIpsum(threeWords)}`, `${colorArray}`]; 
 
 const generateProductDetails = () => {
   let resultString = '';
