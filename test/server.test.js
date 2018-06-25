@@ -7,12 +7,11 @@ const app = require('../server/server');
 // });
 
 describe('Test the root path', () => {
-  test('It should response the GET method', () => {
+  test('It should response the GET method', () =>
     // need to return to prevent tests getting stuck
-    return request(app).get('/').then((response) => {
+    request(app).get('/').then((response) => {
       expect(response.statusCode).toBe(200);
-    });
-  });
+    }));
 
   test('It should response with a json object of product information', (done) => {
     request(app)
