@@ -16,17 +16,16 @@ class App extends React.Component {
 
   componentDidMount() {
     let id = window.location.pathname.slice(1);
-
     if (!id) {
       id = 1;
     }
-    
     this.getProductDetails(id);
   }
 
   getProductDetails(id) {
     axios.get(`/productDetails/${id}`)
       .then((response) => {
+        console.log(response)
         this.setState({
           products: [...response.data],
         });

@@ -1,0 +1,19 @@
+CREATE KEYSPACE IF NOT EXISTS productdetails WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+CREATE TABLE productdetails.products (
+    id              int PRIMARY KEY,
+    title           text,
+    price           text,
+    description     text,
+    color           set<text>, 
+    size            set<int>, 
+    fabric          text,  
+    care            text,
+    features        text
+);
+
+COPY productdetails.products FROM 'C:\Users\calij\Desktop\HR\SDCproductDetails\bigData.tsv' WITH DELIMITER = '\t';
+
+
+COPY productdetails.products (id, title, price, description, color, size, fabric, care, features) FROM 'C:\Users\calij\Desktop\HR\SDCproductDetails\bigData.tsv' WITH DELIMITER = '\t' AND HEADER = true;
+COPY productdetails.products (id, care, color, description, fabric, features, price, size, title) FROM 'C:\Users\calij\Desktop\HR\SDCproductDetails\bigData.tsv' WITH DELIMITER = '\t'AND HEADER = true;
