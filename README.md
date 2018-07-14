@@ -39,4 +39,4 @@ npm install
 npm run react-dev
 npm run start
 ```
-Navigate to [I'm an inline-style link](https://localhost:3001/1) after installing dependencies.
+Navigate to [https://localhost:3001/1](https://localhost:3001/1) after installing dependencies.
