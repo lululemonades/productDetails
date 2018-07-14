@@ -1,6 +1,7 @@
 # Lululemon - Product Details Module
 
-> A clone of Lululemon's product details module. 
+> A clone of Lululemon's product details module created with React, Express, Mongo, and SASS. 
+![image](https://user-images.githubusercontent.com/30884335/42728118-ee4fffe8-8767-11e8-8bb3-0d94038b83f6.JPEG)
 
 ## Related Projects
 
@@ -17,7 +18,7 @@
 
 ## Usage
 
-> The product details module includes information of a product.
+> Some usage instructions apply. See [Development](#development).
 
 ## Requirements
 
@@ -35,4 +36,7 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+npm run react-dev
+npm run start
 ```
+Navigate to [I'm an inline-style link](https://localhost:3001/1) after installing dependencies.
