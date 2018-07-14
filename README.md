@@ -1,6 +1,6 @@
-# Lululemon - Product Details Module
+# Lululemon: Product Details Module
 
-> A clone of Lululemon's product details module created with React, Express, Mongo, and SASS. 
+> Product listing app built using service-oriented architecture, RESTful API, React, Express, Mongo, and SASS. 
 ![image](https://user-images.githubusercontent.com/30884335/42728118-ee4fffe8-8767-11e8-8bb3-0d94038b83f6.JPEG)
 
 ## Related Projects
